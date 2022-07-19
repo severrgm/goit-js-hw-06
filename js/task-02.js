@@ -7,24 +7,15 @@ const ingredients = [
   "Condiments",
 ];
 
-// const addingItems = document.getElementById(`ingredients`);
-// const addListItems = (array, list) => {
-//   array.forEach((item) => {
-//     const listItem = document.createElement("li");
-//     listItem.textContent = item;
-//     list.appendChild(listItem);
-//   });
-// };
-// addListItems(ingredients, addingItems);
 const addingItems = document.getElementById(`ingredients`);
 
-const addListItems = (array) => {
+function addListItems(array) {
   const listArray = array.map((item) => {
     const listItem = document.createElement("li");
     listItem.textContent = item;
     return listItem;
   });
-  addingItems.append(...listArray);
-};
+  addingItems.prepend(...listArray);
+}
 
 addListItems(ingredients);

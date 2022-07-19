@@ -3,10 +3,10 @@ let message = "";
 
 form.addEventListener("submit", onFormSubmit);
 
-function onFormSubmit(event) {
-  event.preventDefault();
+function onFormSubmit(e) {
+  e.preventDefault();
 
-  const formElements = event.currentTarget.elements;
+  const formElements = e.currentTarget.elements;
 
   const mail = formElements.email.value;
   const password = formElements.password.value;
@@ -17,7 +17,7 @@ function onFormSubmit(event) {
   };
 
   if (mail === "" || password === "") {
-    message = window.alert("Please fill all the fields!");
+    message = window.alert("All fields must be filled!");
   } else {
     console.log(formData);
     form.reset();
